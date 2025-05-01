@@ -1,0 +1,184 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>谨以此篇文章 | hrx</title><meta name="author" content="hrx"><meta name="copyright" content="hrx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="谨以此篇文章，纪念我的算法之路 24年3月，无意间接触到了算法，开始的我只学习了一些基础的数据结构，对算法是根本没了解过，在和另外两位同学的交流中，我们组成了一支队伍去参加了第一次ACM竞赛，在这次比赛的过程中，我第一次感受到算法是如此奇妙，虽然我在这次比赛中只做出来了一题关于线性探测再散列的字符串加密算法，但也是对算法有了初步的了解，也是拿到了第一次成功参与奖（太菜了所以只能拿成功参赛奖）。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谨以此篇文章">
+<meta property="og:url" content="http://huangrx0.github.io/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/index.html">
+<meta property="og:site_name" content="hrx">
+<meta property="og:description" content="谨以此篇文章，纪念我的算法之路 24年3月，无意间接触到了算法，开始的我只学习了一些基础的数据结构，对算法是根本没了解过，在和另外两位同学的交流中，我们组成了一支队伍去参加了第一次ACM竞赛，在这次比赛的过程中，我第一次感受到算法是如此奇妙，虽然我在这次比赛中只做出来了一题关于线性探测再散列的字符串加密算法，但也是对算法有了初步的了解，也是拿到了第一次成功参与奖（太菜了所以只能拿成功参赛奖）。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://huangrx0.github.io/img/avater.jpg">
+<meta property="article:published_time" content="2025-04-29T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-05-01T15:29:23.633Z">
+<meta property="article:author" content="hrx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://huangrx0.github.io/img/avater.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "谨以此篇文章",
+  "url": "http://huangrx0.github.io/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/",
+  "image": "http://huangrx0.github.io/img/avater.jpg",
+  "datePublished": "2025-04-29T16:00:00.000Z",
+  "dateModified": "2025-05-01T15:29:23.633Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "hrx",
+      "url": "http://huangrx0.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://huangrx0.github.io/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '谨以此篇文章',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">hrx</span></a><a class="nav-page-title" href="/"><span class="site-name">谨以此篇文章</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">谨以此篇文章</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-04-29T16:00:00.000Z" title="Created 2025-04-30 00:00:00">2025-04-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-05-01T15:29:23.633Z" title="Updated 2025-05-01 23:29:23">2025-05-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>谨以此篇文章，纪念我的算法之路</p>
+<p>24年3月，无意间接触到了算法，开始的我只学习了一些基础的数据结构，对算法是根本没了解过，在和另外两位同学的交流中，我们组成了一支队伍去参加了第一次ACM竞赛，在这次比赛的过程中，我第一次感受到算法是如此奇妙，虽然我在这次比赛中只做出来了一题关于线性探测再散列的字符串加密算法，但也是对算法有了初步的了解，也是拿到了第一次成功参与奖（太菜了所以只能拿成功参赛奖）。</p>
+<img src="./1745827570469-3309bb56-1d13-4edb-876b-fd4691340e77.png" alt="img" style="zoom: 33%;" />
+
+<p>后来的三到五月，中间参加了几次院赛，有次院赛运气十分的好，我们队的反应十分快迅速做出来两题，也是给我们抄底到了一枚铜牌（太爽了，拿了一个U盘）。五月份的决赛，当时还是一枚菜鸡，遇到大佬直接被爆杀。</p>
+<img src="./1745827660649-b4991815-cffb-4268-a274-bfbfde3fc62f.png" alt="img" style="zoom:33%;" />
+
+<img src="./1745827732281-43f52cbb-90e3-48b3-8afc-22750c23a0d2.png" alt="img" style="zoom:33%;" />
+
+<p>一直到24年七月，我才正式开始学习算法，在acwing上看算法基础课，不得不说，y总讲算法讲的是真的好，有些地方讲的十分清晰，动态规划那一部分简直可以称神。暑假留在集训的两个月，真的是大学两年以来收获最大的两个月，学习了很多算法，图论，数论，动态规划等等。而且没有任何事情会来打扰我，全身心的投入算法真的让人很舒服。</p>
+<p>九月份，配了一台主机，狠狠把黑神话玩通关了两次，也参加了集训之后的第一次ACM竞赛，终于拿到了第一次金奖，而且是接近ak的金奖（虽然说题目比较水）。</p>
+<img src="./1745828113081-e18b3b01-c7c6-450e-8147-57590d457812.png" alt="img" style="zoom:33%;" />
+
+<p>很可惜这次没有ak，主要还是对自己不自信，看见F题全场没人对，就放弃了，其实就是一题很简单的字典序排序匹配。这次过后，我的算法能力也是突飞猛进，在之后的院赛也是拿到了金奖，并参加了2024年ICPC杭州站。这次ICPC的参赛过程，每次想起来都后悔，我们打了个全场倒一并且爆零了，比完赛直接灰溜溜的火速离开了杭师大，主要还是第一次参加这么高级别的赛事，心态上没有调整好吧。</p>
+<p>下学期开始，我也开始准备考研，想要去到档次更高的院校。大学的两年课程，切实的让我体会到了双非院校的条件是有多差，没有一点好处，课程全是水课浪费时间的。参加完ICPC之后我也是全身心的投入到考研，学习起了最天书的计组和操作系统。算法的学习就一直推到了25年3月。</p>
+<p>大三下开始，我将更多的心思投入到了考研，每天学习八九个小时，在三月之前学习完了数据结构，并参加了ACM校赛选拔，也是在队友的强势带飞下拿到了金奖并获得了参加省赛的资格。我本想着这是一次提升自己的机会，也是一次检验自己的算法能力。可是事与愿违。</p>
+<img src="./1745828852616-5b337f2a-437a-471c-8e0d-2fc0b7eadaf4.jpeg" alt="img" style="zoom:33%;" />
+
+<p>25年3月，我主要还是将大部分时间放在考研，在此期间参加了天梯赛和ACM的校赛，一个一等奖一个二等奖。在后来ACM省赛集训开始之后，我便将主要的时间转移到学习算法上了。</p>
+<p>考研和算法一起准备真的不是人能承受的事，一边是数学的积分，求导，连续求极限，一边是英语的单词，一边又是算法的dp，图论，数论。我十分后悔自己为什么没有早早规划，对自己专业的竞赛和学习了解的太迟，别人早早在大一大二便开始准备算法比赛，在蓝桥杯，ACM，天梯赛中都有获得奖项，而我就是一个什么专业奖项都没有的菜鸡，于是我就开始不断压缩自己的其余时间，不断的学习算法，想要获得一些竞赛奖项，可以为研究生复试提供一些优势。可是，还是做不到啊。</p>
+<img src="./1745829219787-bea3902d-514b-4cc7-b27f-f53ea8aac686.jpeg" alt="img" style="zoom:33%;" />
+
+<p>四月份开始，我把大部分时间放在了算法，参加了蓝桥杯javaB组，现在不知道成绩如何，参加了天梯赛国赛，只拿了八十分，什么奖都没有。最遗憾的还是一直作为目标的ACM省赛，也没有获得奖项，比赛的过程中，我们在前一个小时将两道签到题做出来了，之后的四个小时，我们一道题都没有做出来，真的感觉到了一种无力感，贪心不会，最后等比赛结束后出来，得知了另外一道题是树形dp，听到之后简直天塌了，根本就不会啊。为什么会这样，我就只是想拿一些奖项能够给我的大学生活添加一些色彩，可是好像都事与愿违。到底要多遗憾才算遗憾呢。从头到尾学习了几百小时的算法，在一次一次的比赛中失利，同时也浪费了自己前期为考研准备的时间。接下来的路该怎么走啊。还是后悔没有早点开始准备比赛啊。写到这里也不知道该说什么好了，接下来就好好准备数学竞赛和考研吧。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://huangrx0.github.io">hrx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://huangrx0.github.io/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/">http://huangrx0.github.io/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avater.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/2025/04/30/4.30/" title="日记1"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">日记1</div></div><div class="info-2"><div class="info-item-1">又是不想学习的一天 明天就是五月份了，不知不觉间也是准备了三个月考研了（虽然说上个学期也准备了两个半月），感觉已经进入疲倦期了。二重积分要么积分区域看不懂，要么积分函数看不懂，要么积分不会求,张宇的1000题简直无敌了。单词目前也还有两千来个，阅读计划五月份开始学习顺带准备六级，还要参加数学竞赛和准备期末考，专业课还剩下计网没有学完,数学题还没有刷,660,880。 希望五月份能够平稳度过吧。 </div></div></div></a><a class="pagination-related" href="/2025/05/01/5.1/" title="日记2"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">日记2</div></div><div class="info-2"><div class="info-item-1"> （放个图） 五月份开始了，昨天也是成功放松一天。 今天背了一下单词，整理了一下微分方程的知识点明天貌似可以开始做题。 5.2计划 早上 单词复习加背150个（目测需要两个小时）。 练字半小时 找好要看的课（又要成为耐看王了） 下午 数学嘛，把第十五讲的书中习题和1000题写了（不知道会不会炸，先写着，目测三小时，可能写着写着会开摆） 晚上 专业课看一个半小时计网 复习 </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">hrx</div><div class="author-info-description">要多努力才算努力</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/huangrx0" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2108611653@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/01/5.1/" title="日记2">日记2</a><time datetime="2025-04-30T16:00:00.000Z" title="Created 2025-05-01 00:00:00">2025-05-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/30/4.30/" title="日记1">日记1</a><time datetime="2025-04-29T16:00:00.000Z" title="Created 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/30/%E8%B0%A8%E4%BB%A5%E6%AD%A4%E7%AF%87%E6%96%87%E7%AB%A0/" title="谨以此篇文章">谨以此篇文章</a><time datetime="2025-04-29T16:00:00.000Z" title="Created 2025-04-30 00:00:00">2025-04-30</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/04/29/hello-world/" title="Hello World">Hello World</a><time datetime="2025-04-28T16:36:09.926Z" title="Created 2025-04-29 00:36:09">2025-04-29</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By hrx</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
