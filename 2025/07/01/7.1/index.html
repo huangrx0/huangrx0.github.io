@@ -1,0 +1,417 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>7.1 | hrx</title><meta name="author" content="hrx"><meta name="copyright" content="hrx"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="好吧，今天也是非常牛逼的一天，写完了660的概率论部分 现在是2025年7月1号，暑假的第一天，也是要开始冲刺的第一天 目前已经完成的任务有：    数学 内容      高数基础十八讲 已完成    概率论基础六讲 已完成    线性代数基础六讲 第四讲刚结束    1000题 线性代数第三讲    660 写完高数和概率论        英语 单词 目前一轮半    阅读 刚做完2000年以及">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7.1">
+<meta property="og:url" content="http://huangrx0.github.io/2025/07/01/7.1/index.html">
+<meta property="og:site_name" content="hrx">
+<meta property="og:description" content="好吧，今天也是非常牛逼的一天，写完了660的概率论部分 现在是2025年7月1号，暑假的第一天，也是要开始冲刺的第一天 目前已经完成的任务有：    数学 内容      高数基础十八讲 已完成    概率论基础六讲 已完成    线性代数基础六讲 第四讲刚结束    1000题 线性代数第三讲    660 写完高数和概率论        英语 单词 目前一轮半    阅读 刚做完2000年以及">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://huangrx0.github.io/img/avater.jpg">
+<meta property="article:published_time" content="2025-06-30T16:00:00.000Z">
+<meta property="article:modified_time" content="2025-06-30T16:48:29.761Z">
+<meta property="article:author" content="hrx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://huangrx0.github.io/img/avater.jpg"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "7.1",
+  "url": "http://huangrx0.github.io/2025/07/01/7.1/",
+  "image": "http://huangrx0.github.io/img/avater.jpg",
+  "datePublished": "2025-06-30T16:00:00.000Z",
+  "dateModified": "2025-06-30T16:48:29.761Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "hrx",
+      "url": "http://huangrx0.github.io/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/avater.jpg"><link rel="canonical" href="http://huangrx0.github.io/2025/07/01/7.1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '7.1',
+  isHighlightShrink: false,
+  isToc: false,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-links"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/img/top.jpg);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">hrx</span></a><a class="nav-page-title" href="/"><span class="site-name">7.1</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/album/"><i class="fa-fw fas fa-images"></i><span> 图片</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/links/"><i class="fa-fw fas fa-links"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">7.1</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2025-06-30T16:00:00.000Z" title="Created 2025-07-01 00:00:00">2025-07-01</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2025-06-30T16:48:29.761Z" title="Updated 2025-07-01 00:48:29">2025-07-01</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post Views:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>好吧，今天也是非常牛逼的一天，写完了660的概率论部分</p>
+<p>现在是2025年7月1号，暑假的第一天，也是要开始冲刺的第一天</p>
+<p>目前已经完成的任务有：</p>
+<table>
+<thead>
+<tr>
+<th align="left">数学</th>
+<th align="left">内容</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"></td>
+<td align="left">高数基础十八讲</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">概率论基础六讲</td>
+<td>已完成</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">线性代数基础六讲</td>
+<td>第四讲刚结束</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">1000题</td>
+<td>线性代数第三讲</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">660</td>
+<td>写完高数和概率论</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">英语</td>
+<td align="left">单词</td>
+<td>目前一轮半</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">阅读</td>
+<td>刚做完2000年以及之前的</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">方法论</td>
+<td>二刷到第二节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">专业课</td>
+<td align="left">数据结构</td>
+<td>课本加选择题二轮结束</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">计算机组成原理</td>
+<td>二轮刚到2.1节</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">操作系统</td>
+<td>二轮刚结束第一章</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left">计算机网络</td>
+<td>一轮结束</td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">政治</td>
+<td align="left">0</td>
+<td></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"></td>
+<td></td>
+</tr>
+</tbody></table>
+<img src="./../7.1/image-20250701002923416.png" alt="image-20250701002923416" style="zoom: 33%;" />
+
+<p>也是第一次一天的学习时长达到了十小时以上，</p>
+<p>以后尽量做到一周三天（一、三、五）达到十小时以上，两天（二、四）达到九小时以上，一天（六）八小时，一天（周天）七小时。</p>
+<p>制定七月一号到十五号之间的计划</p>
+<table>
+<thead>
+<tr>
+<th>数学</th>
+<th>内容</th>
+<th>计划时间</th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>学习完线性代数基础六讲</td>
+<td>7.1-7.12</td>
+</tr>
+<tr>
+<td></td>
+<td>写完660线代部分</td>
+<td>7.1-7.12</td>
+</tr>
+<tr>
+<td></td>
+<td>复习高数十八讲中的经典三百题</td>
+<td>7.1-7.8</td>
+</tr>
+<tr>
+<td></td>
+<td>复习660中的高数错题</td>
+<td>7.1-7.10</td>
+</tr>
+<tr>
+<td></td>
+<td>复习660中的概率论错题</td>
+<td>7.11-7.15</td>
+</tr>
+<tr>
+<td></td>
+<td>880完成第一章</td>
+<td>7.1-7.8</td>
+</tr>
+<tr>
+<td></td>
+<td>880完成第二章</td>
+<td>7.9-7.22</td>
+</tr>
+<tr>
+<td></td>
+<td>880完成第三章</td>
+<td>7.23-</td>
+</tr>
+<tr>
+<td></td>
+<td>高数强化十八讲配套1000题强化部分</td>
+<td>7.8-以后</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>英语</td>
+<td>订正2000年的阅读</td>
+<td>7.1-7.2</td>
+</tr>
+<tr>
+<td></td>
+<td>完成并订正01年到09年</td>
+<td>7.1-7.31</td>
+</tr>
+<tr>
+<td></td>
+<td>结束单词二轮</td>
+<td>7.1-7.20</td>
+</tr>
+<tr>
+<td></td>
+<td>二刷方法论</td>
+<td>7.1-7.10</td>
+</tr>
+<tr>
+<td></td>
+<td>学习语法和长难句</td>
+<td>7.1-7.30</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>408</td>
+<td>复习数据结构（每三天复习一章，整理基础常考的代码）</td>
+<td>7.1-7.30</td>
+</tr>
+<tr>
+<td></td>
+<td>计算机组成原理二轮复习（二刷选择题）</td>
+<td>7.1-7.20</td>
+</tr>
+<tr>
+<td></td>
+<td>操作系统二轮复习（二刷选择题）</td>
+<td>7.1-7.20</td>
+</tr>
+<tr>
+<td></td>
+<td>计算机网络二轮复习（第一章到第四章、第六章）</td>
+<td>7.22-7.30</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>政治</td>
+<td>看徐涛强化课</td>
+<td>7.1-7.31</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>Author: </span><span class="post-copyright-info"><a href="http://huangrx0.github.io">hrx</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>Link: </span><span class="post-copyright-info"><a href="http://huangrx0.github.io/2025/07/01/7.1/">http://huangrx0.github.io/2025/07/01/7.1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>Copyright Notice: </span><span class="post-copyright-info">All articles on this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless otherwise stated.</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/avater.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/05/31/5.31/" title="日记6"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">日记6</div></div><div class="info-2"><div class="info-item-1"> 今天是5月31号，五月的最后一天，也是端午节（端午节安康） 不知不觉间五月份已经过去了，感觉是在忙一些乱七八糟的事情中度过了这一个月 这个月，结束了专业课一轮，高数一轮，并且概率论也学完了大部分（再过个四五天应该就能学完了） 660也是开始写了，但是正确率貌似不太理想，有些题看到一点思路都没有，感觉微分方程和泰勒公式这一部分需要在之后的时间里好好巩固复习一下（不然660都不会做），单词也背完了一轮，现在二轮开始背了快两千个，越来越多的单词忘记重新背，导致了在软件上欠的单词呈指数级增长（欠的越多越不想背）。 这个月尝试了白天猛猛学晚上回宿舍打一小时游戏的方法没感觉还是很解压的。 这个月还考完了两门期末考，没有任何的真情实感，mad纯纯的突击，应该是都能过，下个月五号迎来本科阶段最后一门闭卷考试，考完直接开摆（摆不了一点，byd六级还没过） 周四的时候在打ACM比赛的过程中中途去考了个期末考，nm那个php代码哪个人会写啊，火速考完润出来接着打比赛了，也是在不断地做题下，单人队取得了第二名的成绩，没有别的情况的话这应该是我今年最后一次参加acm比赛了（明年的事明年再说） plan...</div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/avater.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">hrx</div><div class="author-info-description">要多努力才算努力</div><div class="site-data"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">Tags</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">Categories</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://github.com/huangrx0" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:2108611653@qq.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Posts</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/07/01/7.1/" title="7.1">7.1</a><time datetime="2025-06-30T16:00:00.000Z" title="Created 2025-07-01 00:00:00">2025-07-01</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/31/5.31/" title="日记6">日记6</a><time datetime="2025-05-30T16:00:00.000Z" title="Created 2025-05-31 00:00:00">2025-05-31</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/14/5.14/" title="日记5">日记5</a><time datetime="2025-05-13T16:00:00.000Z" title="Created 2025-05-14 00:00:00">2025-05-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/05/5.5/" title="日记4">日记4</a><time datetime="2025-05-04T16:00:00.000Z" title="Created 2025-05-05 00:00:00">2025-05-05</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/05/04/5.4/" title="日记3">日记3</a><time datetime="2025-05-03T16:00:00.000Z" title="Created 2025-05-04 00:00:00">2025-05-04</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By hrx</span><span class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b1</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
